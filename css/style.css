@@ -20,7 +20,6 @@ img {
 
 /* Header */
 .header {
-    align-items: center;
     background: linear-gradient(135deg, #8844ee, #b07dfb);
     display: grid;
     grid-area: header;
@@ -68,9 +67,8 @@ img {
     border-radius: 8px;
     box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
     display: block;
-    height: 128px;
-    min-width: 64px;
-    max-width: 128px;
+    min-width: 100px;
+    max-width: 140px;
     margin: 0 auto 30px;
     padding: 20px;
     transition: .3s ease-out;
@@ -84,7 +82,7 @@ img {
 
 /* content */
 .content {
-    background: #f2f3f6;
+    background: #ffffff;
     display: grid;
     grid-area: content;
     grid-template-columns: 1fr 1fr;
@@ -95,9 +93,9 @@ img {
     width: 100%;
 }
 
-.content p {
+.texto-padrao {
     color: #646464;
-    font-size: 1.2rem;
+    font-size: 1.15rem;
     line-height: 1.6;
     letter-spacing: 0.005rem;
 }
@@ -107,8 +105,10 @@ img {
 }
 
 .imagem-01 {
-    grid-row: span 2;
     align-self: end;
+    background-color: darkblue;
+    grid-row: span 2;
+    object-fit: cover;
 }
 
 .imagem-02 {
@@ -165,8 +165,52 @@ img {
     padding: 5px 0;
 }
 
+p.descricao {
+    color: #b07dfb;
+    font-size: 0.875rem;
+    letter-spacing: -0.07px;
+    line-height: 22px;
+    max-width: 16em;
+}
+
+.citacao,
+.atributos {
+    align-self: start;
+    background: linear-gradient(135deg, #8844ee, #b07dfb);
+    box-shadow: 5px 5px 15px 0px rgba(44, 44, 44, 0.15);
+    border-radius: 4px;
+    color: #ffffff;
+    padding: 30px;
+}
+
+.citacao p {
+    font-style: italic;
+    font-size: 1.5rem;
+    letter-spacing: -0.12px;
+    line-height: 38px;
+    margin: 0 auto;
+    max-width: 500px;
+    text-align: center;
+}
+
+.citacao cite {
+    display: block;
+    text-align: right;
+}
+
 .informacoes p+p {
     margin-top: 30px;
+}
+
+.atributos li {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 1.125rem;
+    font-weight: 600;
+    padding: 15px;
+}
+
+.atributos li:not(:last-of-type) {
+    border-bottom: 2px solid #af7bfb;
 }
 
 /************************************/
@@ -178,11 +222,8 @@ img {
     display: grid;
     grid-area: anuncios;
     grid-gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     padding: 30px;
-}
-
-.anuncio-img {
-    /* margin-bottom: 30px; */
 }
 
 .anuncio-img img {

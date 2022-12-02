@@ -1,0 +1,97 @@
+@media screen and (max-width: 1200px) {
+    .estrutura {
+        grid-template-areas:
+            "header header header"
+            "sidenav content content"
+            "sidenav anuncios anuncios"
+            "footer footer footer"
+        ;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .estrutura {
+        grid-template-columns: 100%;
+        grid-template-areas:
+            "header"
+            "sidenav"
+            "content"
+            "anuncios"
+            "footer"
+        ;
+    }
+
+    .sidenav {
+        overflow-x: auto;
+        padding-bottom: 0;
+        position: relative;
+        -webkit-overflow-scrolling: touch;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+    }
+
+    .sidenav ul {
+        display: flex;
+        gap: 20px;
+    }
+
+    .sidenav li {
+        flex: 1 0 100px;
+    }
+}
+
+@media screen and (max-width: 750px) {
+    .header {
+        grid-template-columns: auto;
+    }
+
+    .logo {
+        margin-bottom: 30px;
+    }
+
+    .nav-principal {
+        align-items: flex-start;
+        gap: 10px;
+        justify-content: flex-start;
+    }
+
+    .nav-principal li a {
+        font-size: 1rem;
+    }
+
+    .sidenav::after {
+        content: "🡒";
+        color: rgba(0, 0, 0, 0.3);
+        font-size: 1.5rem;
+        position: absolute;
+        right: 10px;
+        top: 0;
+        animation: seta .6s ease-in 0s infinite alternate;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .content {
+        grid-template-columns: auto;
+    }
+
+    .texto-padrao {
+        font-size: 1rem;
+    }
+
+    .titulo h1 {
+        font-size: 3rem;
+    }
+
+    .citacao,
+    .atributos {
+        padding: 10px;
+    }
+
+    .citacao p {
+        font-size: 1.2rem;
+    }
+
+    .atributos li {
+        font-size: 1rem;
+    }
+}
